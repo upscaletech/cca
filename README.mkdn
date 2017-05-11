@@ -1,0 +1,54 @@
+Carbon Chain Python Adapter
+=========
+
+
+Description
+-----------
+
+Cca is JsonRPC wrapper for Carbon Chain
+Its heavy based on [python-bitcoinrpc](https://github.com/jgarzik/python-bitcoinrpc)
+but adapted for Carbon Chain server, and replacing the httplib by
+[requests](http://docs.python-requests.org/en/master/)
+
+Installation
+----------
+
+Cca can be installed from
+[PyPi](https://pypi.python.org/pypi) using
+[pip](https://pypi.python.org/pypi/pip). Enter the following command
+into terminal:
+
+    pip install cca
+
+Alternatively you can clone this public repository by entering the following
+command into terminal.
+
+    git clone https://github.com/upscaletech/cca
+
+Usage
+-------
+
+Once you've download the code you should install needed libs
+
+    sudo pip install -r requirements.txt
+
+Finally just use the [carbon chain api documentacion](http://www.carbonchain.com/developers/json-rpc-api/) and make calls to the wrapper.
+Remember to replace the rpc variables with the information of your specific chain
+
+```python
+from Cca import Cca
+rpcuser = 'carbonchainrpc'
+rpcpasswd = 'YoUrLoNgRpCpAsSwOrD'
+rpchost = 'localhost'
+rpcport = '22335'
+chainname = 'myChain'
+
+api = Cca(rpcuser, rpcpasswd, rpchost, rpcport, chainname)
+api.getinfo()
+```
+
+License
+-------
+
+This package is distributed under BSD License.
+See [LICENSE](https://github.com/upscaletech/cca/blob/master/LICENSE)
